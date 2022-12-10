@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins';
 }
 
 body {
@@ -24,22 +25,27 @@ body {
 
 .menu header nav ul {
     list-style: none;
+    transition: .2s;
 }
 
-.menu header nav ul li {
+.menu header nav #itens_container .item {
     font-size: 20px;
     margin-top: 10px;
-    width: 40px;
+    width: 100%;
     height: 40px;
-    border-radius: 50em;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #0f0f0f;
 }
 
-.menu header nav ul li:hover {
+.menu header nav #itens_container .item:hover {
     background-color: #252525;
+}
+
+.hide {
+    display: none;
 }
 
 /* User Picture */
@@ -64,32 +70,45 @@ body {
     background-color: #191919;
     color: white;
     height: 100vh;
-    width: 256px;
+    width: 175px;
     position: absolute;
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 20px 10px;
     transition: .3s;
 }
 
-.menu_expanded header nav ul {
+.menu_expanded header nav #itens_container {
     list-style: none;
+    width: 100%
 }
 
-.menu_expanded header nav ul li {
+.menu_expanded header nav #itens_container .item {
     font-size: 20px;
     margin-top: 10px;
-    width: 40px;
+    width: 155px;
     height: 40px;
-    border-radius: 50em;
+    padding: 0px 25px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #0f0f0f;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.25s;
 }
 
-.menu_expanded header nav ul li:hover {
+.menu_expanded header nav #itens_container .item:hover {
     background-color: #252525;
+}
+
+.item_label {
+    margin-left: 10px;
+}
+
+.show {
+    display: flex;
 }
